@@ -17,21 +17,14 @@ public class RefactorExamen {
     public static boolean resultado = false;
     public static void main(String[] args) {
         {
-        int digitos=3;
-        int numeroDigitos=0;
+        int digitos=introducirNumDigitos();
         if(digitos<=0)
         System.out.println("Ingrese como parámetro, un numero de digitos correcto (mayor que 0): ");
         for(int i = 1; i <= 99999; i++ )
         {
             int auxiliar = i;
  
-            int contador=0;
- 
-            while (auxiliar != 0)
-        {
-            auxiliar = auxiliar / 10;
-            contador++;
-        }
+            int contador=numContador(auxiliar);
         numeroDigitos=contador;
             
             
@@ -58,8 +51,7 @@ public class RefactorExamen {
             } 
         } 
      
-                if (resultado == true) 
-                    System.out.println(i);    
+                    resultado(i);    
             }
         }
         }
@@ -67,6 +59,27 @@ public class RefactorExamen {
        
  
 }
+
+    public static void resultado(int i) {
+        if (resultado == true)
+            System.out.println(i);
+    }
+
+    public static int numContador(int auxiliar) {
+        int contador=0;
+        while (auxiliar != 0)
+        {
+            auxiliar = auxiliar / 10;
+            contador++;
+        }
+        return contador;
+    }
+
+    public static int introducirNumDigitos() {
+        int digitos=3;
+        int numeroDigitos=0;
+        return digitos;
+    }
     }
     
-}
+
